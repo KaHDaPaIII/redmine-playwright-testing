@@ -10,5 +10,8 @@
   "devDependencies": {
     "@playwright/test": "^1.25.2",
     "allure-playwright": "^2.0.0-beta.19"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.18.1"
   }
 }
