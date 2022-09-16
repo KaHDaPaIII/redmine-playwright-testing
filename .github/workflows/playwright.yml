@@ -21,12 +21,12 @@ jobs:
         run: npx playwright test
 
       - name: Get Allure history
-          uses: actions/checkout@v2
-          if: always()
-          continue-on-error: true
-          with:
-            ref: gh-pages
-            path: gh-pages
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
 
       - name: Test marketplace action
         uses: simple-elf/allure-report-action@master
@@ -55,7 +55,7 @@ jobs:
             state: 'success'
             sha: ${{ github.event.pull_request.head.sha }}
             target_url: simple-elf.github.io/github-allure-history/${{ github.run_number }}
-            
+
       # - uses: actions/upload-artifact@master
       #   with:
       #     name: allure-results
