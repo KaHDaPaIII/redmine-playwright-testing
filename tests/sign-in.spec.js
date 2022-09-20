@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { RedmineHomePage } = require('./pageobjects/redmine-home-page.js');
 const { RedmineLoginPage } = require('./pageobjects/redmine-login-page.js');
-const { login, password } = require('./my-functions/credentials.js');
+const { login, password } = require('./my-functions/credentials.json');
 const { UserCredentials } = require('./my-functions/generate-credentials.js');
 
 test('Sign in with valid credentials.', async ({ page }) => {
@@ -12,8 +12,8 @@ test('Sign in with valid credentials.', async ({ page }) => {
     await homePage.clickSignIn();
     await loginPage.login(login, password);
     
-    await expect.soft(page.locator('#loggedas')).toBeVisible();
-    await expect.soft(page.locator('#loggedas > a')).toHaveText(login);
+    await expect(page.locator('#loggedas')).toBeVisible();
+    await expect(page.locator('#loggedas > a')).toHaveText(login);
 })
 
 test('Sign in with not valid (random generated) credentials.', async ({ page }) => {
