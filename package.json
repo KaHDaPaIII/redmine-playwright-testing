@@ -3,7 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test:chrome":  "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:safari":  "npx playwright test --project=webkit",
+    "test:chrome:headed":   "npx playwright test --headed --project=chromium",
+    "test:firefox:headed":  "npx playwright test --headed --project=firefox",
+    "test:safari:headed":   "npx playwright test --headed --project=webkit",
+    "allure:serve": "npx allure serve allure-results",
+    "allure:generate": "npx allure generate allure-results --clean && allure open"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
