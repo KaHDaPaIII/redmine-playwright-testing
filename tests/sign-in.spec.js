@@ -3,7 +3,7 @@ const { RedmineHomePage } = require('./pageobjects/redmine-home-page.js');
 const { RedmineLoginPage } = require('./pageobjects/redmine-login-page.js');
 const { UserCredentials } = require('./my-functions/generate-credentials.js');
 
-test.only('Sign in with valid credentials.', async ({ page }) => {
+test('Sign in with valid credentials.', async ({ page }) => {
     const homePage = new RedmineHomePage(page);
     const loginPage = new RedmineLoginPage(page);
     
