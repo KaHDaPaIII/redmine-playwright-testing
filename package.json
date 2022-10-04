@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "test:chrome":  "npx playwright test --project=chromium",
+    "test:chrome": "npx playwright test --project=chromium",
     "test:firefox": "npx playwright test --project=firefox",
-    "test:safari":  "npx playwright test --project=webkit",
-    "test:chrome:headed":   "npx playwright test --headed --project=chromium",
-    "test:firefox:headed":  "npx playwright test --headed --project=firefox",
-    "test:safari:headed":   "npx playwright test --headed --project=webkit",
+    "test:safari": "npx playwright test --project=webkit",
+    "test:headed": "npx playwright test --headed",
+    "test:chrome:headed": "npx playwright test --project=chromium --headed",
+    "test:firefox:headed": "npx playwright test --project=firefox --headed",
+    "test:safari:headed": "npx playwright test --project=webkit --headed",
     "allure:serve": "npx allure serve allure-results",
     "allure:generate": "npx allure generate allure-results --clean && allure open"
   },
@@ -22,6 +23,7 @@
     "allure-playwright": "^2.0.0-beta.19"
   },
   "dependencies": {
-    "allure-commandline": "^2.18.1"
+    "allure-commandline": "^2.18.1",
+    "dotenv": "^16.0.3"
   }
 }
