@@ -39,5 +39,5 @@ test('“Stay logged in” is working', async ({ page }) => {
     await newPage.goto('https://www.redmine.org/');
 
     await expect(newPage.locator('#loggedas')).toBeVisible();
-    await expect(newPage.locator('#loggedas > a')).toHaveText(login);
+    await expect(newPage.locator('#loggedas > a')).toHaveText(process.env.TESTACCOUNT_LOGIN);
 })
